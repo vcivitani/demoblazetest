@@ -1,0 +1,42 @@
+demoblazetest project
+=====================
+
+In order to design and implement the test, It has been divided the test in two parts:
+1.- navigate_demoblaze_test.feature
+2.- simulate_user_experience.feature
+
+The first one is used to assure the navigation through the web, focusing on product categories.
+The second one is used to simulate the user experience buying a product, subdivided in 3 cases:
+	1.- add a product to cart
+	2.- having two products in cart, delete one specific product
+	3.- having a product in cart, finish the purchase process
+
+
+Execution instructions:
+=======================
+
+In order to launch the tests, it's needed to set the path to the geckodriver when using maven, 
+therefore, use the next launch command in the main folder:
+
+_$ mvn test -Dwebdriver.gecko.driver=/path/to/geckodriver
+
+
+How to approach testing this site in a real project
+====================================================
+
+The test should be as short as possible and re-usably, therefore the best approach should be divide the 
+user experience in small tests:
+- assert link navigation through the web
+- assert access to product information
+- assert add product to cart
+- assert delete product from cart (one product, several, just one from several, etc)
+- assert purchase process, checking all the fields required (assert mandatory fields, type of fields, 
+		 length, etc) and assert information displayed to user (amount, data filled by user, etc)
+- assert user sessions
+
+In order to do this tests, the code should have a good library set, in order to work better with error managements, 
+product information and web navigation helpers.
+
+
+
+
